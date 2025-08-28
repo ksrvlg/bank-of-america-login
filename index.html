@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Online Banking</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f4f7;
+      color: #333;
+    }
+    header {
+      background: #00274d;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .login-box {
+      max-width: 360px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .login-box h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #00274d;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      display: block;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    .btn-login {
+      width: 100%;
+      background: #e31837;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-login:hover {
+      background: #c4162f;
+    }
+    .links {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .links a {
+      color: #00274d;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Popup Style */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .popup-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .popup-box h3 {
+      color: #e31837;
+      margin-bottom: 15px;
+    }
+    .popup-box p {
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+    .popup-box a {
+      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .popup-box a:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Secure Online Banking</h1>
+  </header>
+
+  <div class="login-box">
+    <h2>Sign In</h2>
+    <form>
+      <div class="form-group">
+        <label for="userid">User ID</label>
+        <input type="text" id="userid" placeholder="Enter your User ID">
+      </div>
+      <div class="form-group">
+        <label for="pass">Password</label>
+        <input type="password" id="pass" placeholder="Enter your Password">
+      </div>
+      <button type="submit" class="btn-login">Sign In</button>
+    </form>
+    <div class="links">
+      <p><a href="#">Forgot User ID or Password?</a></p>
+      <p><a href="#">Enroll in Online Banking</a></p>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h3>⚠️ Account Locked</h3>
+      <p>Your account has been temporarily locked due to unusual activity.<br>
+      Please call our support team immediately to restore access.</p>
+      <a href="tel:+18037624570">📞 Call Support: +1-803-762-4570</a>
+    </div>
+  </div>
+
+  <script>
+    // Show popup after 5 seconds
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "flex";
+    }, 5000);
+  </script>
+</body>
+</html>
